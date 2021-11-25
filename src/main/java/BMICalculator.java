@@ -43,32 +43,27 @@ public class BMICalculator {
         this.bodyWeight = bodyWeight;
     }
 
-    public double calculateBMI(){
+    public double calculateBMI() {
         double bmi;
-        bmi = bodyWeight / ((bodyHeight / 100.0)*(bodyHeight / 100.0));
+        bmi = bodyWeight / ((bodyHeight / 100.0) * (bodyHeight / 100.0));
         return round(bmi);
     }
 
-    public int calculateBMICategory(){
+    public int calculateBMICategory() {
         int bmicat;
-        if (gender == 'm'){
-            if(calculateBMI() < 16.0){
+        if (gender == 'm') {
+            if (calculateBMI() < 16.0) {
                 return bmicat = -2;
-            }
-            else if (calculateBMI() >= 16.0 && calculateBMI() <= 18.4){
+            } else if (calculateBMI() >= 16.0 && calculateBMI() <= 18.4) {
                 return bmicat = -1;
-            }
-            else if (calculateBMI() >= 18.5 && calculateBMI() <= 24.9){
+            } else if (calculateBMI() >= 18.5 && calculateBMI() <= 24.9) {
                 return bmicat = 0;
-            }
-            else if (calculateBMI() >= 25.0 && calculateBMI() <= 34.9){
+            } else if (calculateBMI() >= 25.0 && calculateBMI() <= 34.9) {
                 return bmicat = 1;
-            }
-            else if (calculateBMI() >= 35.0){
+            } else if (calculateBMI() >= 35.0) {
                 return bmicat = 2;
             }
-        }
-        else if (gender == 'w') {
+        } else if (gender == 'w') {
             if (calculateBMI() < 15.0) {
                 return bmicat = -2;
             } else if (calculateBMI() >= 15.0 && calculateBMI() <= 17.4) {
@@ -84,27 +79,21 @@ public class BMICalculator {
         return 0;
     }
 
-    public String getBMICategoryName(){
+    public String getBMICategoryName() {
         String bmiName;
-        if (calculateBMICategory() == -2){
+        if (calculateBMICategory() == -2) {
             return bmiName = "Sehr starkes Untergewicht";
-        }
-        else if (calculateBMICategory() == -1) {
+        } else if (calculateBMICategory() == -1) {
             return bmiName = "Untergewicht";
-        }
-        else if (calculateBMICategory() == 0){
+        } else if (calculateBMICategory() == 0) {
             return bmiName = "Normalgewicht";
-        }
-        else if (calculateBMICategory() == 1){
+        } else if (calculateBMICategory() == 1) {
             return bmiName = "Übergewicht";
-        }
-        else if (calculateBMICategory() == 2){
+        } else if (calculateBMICategory() == 2) {
             return bmiName = "Sehr starkes Übergewicht";
         }
         return null;
     }
-
-
 
 
 }
